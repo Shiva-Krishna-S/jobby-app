@@ -11,6 +11,17 @@
   margin-bottom: 20px;
 }
 
+@media screen and (min-width: 768px) {
+  .job-card-container {
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    margin-bottom: 30px;
+  }
+}
+
 .job-card-link {
   text-decoration: none;
   color: #ffffff;
@@ -26,14 +37,29 @@
   margin-right: 10px;
 }
 
+@media screen and (min-width: 768px) {
+  .job-card-company-logo {
+    height: 65px;
+    width: 65px;
+    margin-right: 20px;
+  }
+}
+
 .job-card-company-name-rating {
   line-height: 0;
 }
+
 .job-card-company-name {
   color: #ffffff;
   font-family: 'Roboto';
   font-size: 14px;
   font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .job-card-company-name {
+    font-size: 21px;
+  }
 }
 
 .job-card-rating-container {
@@ -48,10 +74,24 @@
   margin-right: 5px;
 }
 
+@media screen and (min-width: 768px) {
+  .star-icon {
+    height: 21px;
+    width: 21px;
+    margin-right: 10px;
+  }
+}
+
 .rating-text {
   color: #ffffff;
   font-family: 'Roboto';
   font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .rating-text {
+    font-size: 21px;
+  }
 }
 
 .job-card-mid-container {
@@ -71,6 +111,12 @@
   margin-right: 10px;
 }
 
+@media screen and (min-width: 768px) {
+  .job-card-location-container {
+    margin-right: 25px;
+  }
+}
+
 .job-card-mid-icon {
   color: #ffffff;
   height: 13px;
@@ -78,10 +124,24 @@
   margin-right: 5px;
 }
 
+@media screen and (min-width: 768px) {
+  .job-card-mid-icon {
+    height: 21px;
+    width: 21px;
+    margin-right: 10px;
+  }
+}
+
 .location-name {
   color: #ffffff;
   font-family: 'Roboto';
   font-size: 13px;
+}
+
+@media screen and (min-width: 768px) {
+  .location-name {
+    font-size: 16px;
+  }
 }
 
 .package-text {
@@ -91,6 +151,12 @@
   font-weight: 500;
 }
 
+@media screen and (min-width: 768px) {
+  .package-text {
+    font-size: 21px;
+  }
+}
+
 .job-card-description {
   color: #ffffff;
   font-family: 'Roboto';
@@ -98,8 +164,21 @@
   font-weight: 500;
 }
 
+@media screen and (min-width: 768px) {
+  .job-card-description {
+    font-size: 21px;
+  }
+}
+
 .job-card-description-details {
   color: #ffffff;
   font-family: 'Roboto';
   font-size: 13px;
+}
+
+@media screen and (min-width: 768px) {
+  .job-card-description-details {
+    font-size: 17px;
+    line-height: 1.5;
+  }
 }

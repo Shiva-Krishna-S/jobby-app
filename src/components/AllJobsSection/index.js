@@ -221,7 +221,7 @@ class AllJobsSection extends Component {
   }
 
   renderProfileFailureView = () => (
-    <div className="profile-failure-conatiner">
+    <div className="profile-failure-container">
       <button
         type="button"
         onClick={this.onClickRetryProfile}
@@ -305,7 +305,7 @@ class AllJobsSection extends Component {
     return (
       <div className="jobs-content-container">
         <div className="jobs-profile-filters-section">
-          <div className="search-bar-container">
+          <div className="search-bar-container-1">
             <input
               type="search"
               value={searchInput}
@@ -330,6 +330,25 @@ class AllJobsSection extends Component {
             changeEmploymentType={this.changeEmploymentType}
             changeSalaryRange={this.changeSalaryRange}
           />
+        </div>
+        <div className="jobs-right-pane-section">
+          <div className="search-bar-container-2">
+            <input
+              type="search"
+              value={searchInput}
+              placeholder="Search"
+              onChange={this.onChangeSearchInput}
+              onKeyDown={this.onEnterSearchInput}
+              className="job-search-input-bar"
+            />
+            <button
+              type="button"
+              onClick={this.onClickSearch}
+              className="job-search-icon-btn"
+            >
+              <BsSearch className="search-icon" />
+            </button>
+          </div>
           {this.renderAllJobs()}
         </div>
       </div>

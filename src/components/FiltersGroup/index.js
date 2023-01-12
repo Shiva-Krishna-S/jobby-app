@@ -8,7 +8,7 @@ const FiltersGroup = props => {
       const onChangeEmploymentType = event =>
         changeEmploymentType(event.target.value)
       return (
-        <li key={eachType.employmentTypeId}>
+        <li key={eachType.employmentTypeId} className="employment-list-item">
           <input
             type="checkbox"
             value={eachType.employmentTypeId}

@@ -10,10 +10,26 @@
   color: #ffffff;
 }
 
+@media screen and (min-width: 768px) {
+  .employment-type-text {
+    font-size: 18px;
+  }
+}
+
 .employment-type-list-container {
   padding-left: 0px;
   list-style-type: none;
   margin-top: 0px;
+}
+
+.employment-list-item {
+  margin-bottom: 6px;
+}
+
+@media screen and (min-width: 768px) {
+  .employment-list-item {
+    margin-bottom: 16px;
+  }
 }
 
 .employment-checkbox {
@@ -22,8 +38,22 @@
   margin-right: 10px;
 }
 
+@media screen and (min-width: 768px) {
+  .employment-checkbox {
+    height: 16px;
+    width: 16px;
+    margin-right: 15px;
+  }
+}
+
 .employment-type-item {
   font-family: 'Roboto';
   font-size: 12px;
   color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .employment-type-item {
+    font-size: 15px;
+  }
 }
