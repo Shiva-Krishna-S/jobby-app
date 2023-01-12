@@ -29,6 +29,7 @@
 
 .search-bar-container-1 {
   display: flex;
+  justify-content: space-between;
   width: 100%;
   border: 1px solid #64748b;
   background-color: transparent;
@@ -44,6 +45,7 @@
 
 .search-bar-container-2 {
   display: flex;
+  justify-content: space-between;
   width: 50%;
   border: 1px solid #64748b;
   background-color: transparent;
@@ -58,7 +60,7 @@
 }
 
 .job-search-input-bar {
-  flex-grow: 1;
+  width: 80%;
   height: 32px;
   background-color: transparent;
   padding: 5px 10px 5px 10px;
@@ -67,6 +69,7 @@
   color: #ffffff;
   font-family: 'Roboto';
   font-size: 15px;
+  align-self: stretch;
 }
 
 @media screen and (min-width: 768px) {
@@ -81,7 +84,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  width: 40px;
+  width: 20%;
   background-color: #2c364c;
 }
 
