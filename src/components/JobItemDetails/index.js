@@ -85,7 +85,7 @@ class JobItemDetails extends Component {
   }
 
   loadingView = () => (
-    <div className="loader-container">
+    <div className="current-job-loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
@@ -93,16 +93,25 @@ class JobItemDetails extends Component {
   retryJobItemDetails = () => this.getJobDetails()
 
   failureView = () => (
-    <div>
-      <img
-        alt="failure view"
-        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
-      />
-      <h1>Oops! Something Went Wrong</h1>
-      <p>We cannot seem to find the page you are looking for.</p>
-      <button onClick={this.retryJobItemDetails} className="btn" type="button">
-        Retry
-      </button>
+    <div className="current-job-failure-container">
+      <div className="current-job-sub-failure-container">
+        <img
+          alt="failure view"
+          src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+          className="current-job-failure-img"
+        />
+        <h1 className="no-jobs-title">Oops! Something Went Wrong</h1>
+        <p className="no-jobs-para">
+          We cannot seem to find the page you are looking for.
+        </p>
+        <button
+          onClick={this.retryJobItemDetails}
+          className="profile-retry-btn"
+          type="button"
+        >
+          Retry
+        </button>
+      </div>
     </div>
   )
 
@@ -122,57 +131,68 @@ class JobItemDetails extends Component {
     } = jobDetails
 
     return (
-      <div>
-        <li>
-          <div>
-            <img alt="job details company logo" src={companyLogoUrl} />
-            <div>
-              <h1>{title}</h1>
-              <div>
-                <AiFillStar />
-                <p>{rating}</p>
+      <div className="job-item-container">
+        <div className="current-job-container">
+          <div className="current-job-top-container">
+            <img
+              alt="job details company logo"
+              src={companyLogoUrl}
+              className="current-job-logo"
+            />
+            <div className="current-job-company-name-rating">
+              <h1 className="current-job-company-name">{title}</h1>
+              <div className="current-job-rating-container">
+                <AiFillStar className="current-job-star-icon" />
+                <p className="current-job-rating-text">{rating}</p>
               </div>
             </div>
           </div>
-          <div>
-            <div>
-              <div>
-                <IoLocationSharp />
-                <p>{location}</p>
+          <div className="current-job-card-mid-container">
+            <div className="current-job-card-location-role">
+              <div className="current-job-card-location-container">
+                <IoLocationSharp className="current-job-card-mid-icon" />
+                <p className="current-location-name">{location}</p>
               </div>
-
-              <div>
-                <IoBagRemoveSharp />
-                <p>{employmentType}</p>
+              <div className="current-job-card-location-container">
+                <IoBagRemoveSharp className="current-job-card-mid-icon" />
+                <p className="current-location-name">{employmentType}</p>
               </div>
             </div>
-            <div>
-              <p>{packagePerAnnum}</p>
-            </div>
+            <p className="current-package-text">{packagePerAnnum}</p>
           </div>
-          <hr />
-          <div>
-            <h1>Description</h1>
-            <a href={companyWebsiteUrl}>
-              <p>Visit </p>
-              <BiLinkExternal />
+          <hr className="separator" />
+          <div className="current-job-desc-link">
+            <h1 className="current-job-card-description">Description</h1>
+            <a href={companyWebsiteUrl} className="current-job-links-container">
+              <p className="visit-link">Visit </p>
+              <BiLinkExternal className="visit-link" />
             </a>
           </div>
-          <p>{jobDescription}</p>
-          <h1>Skills </h1>
-          <ul>
+          <p className="current-job-card-description-details">
+            {jobDescription}
+          </p>
+          <h1 className="current-job-skills">Skills </h1>
+          <ul className="current-job-skills-container">
             {skills.map(eachItem => (
               <Skills skillsItem={eachItem} key={eachItem.name} />
             ))}
           </ul>
-          <h1>Life at Company </h1>
-          <div>
-            <p>{lifeAtCompany.description}</p>
-            <img alt="life at company" src={lifeAtCompany.image_url} />
+          <div className="current-job-life-at-co-container">
+            <div className="current-job-life-at-co-text-container">
+              <h1 className="current-job-skills">Life at Company </h1>
+              <p className="current-job-card-description-details">
+                {lifeAtCompany.description}
+              </p>
+            </div>
+            <img
+              alt="life at company"
+              src={lifeAtCompany.image_url}
+              className="life-at-company-img"
+            />
           </div>
-        </li>
-        <h1>Similar Jobs </h1>
-        <ul>
+        </div>
+        <h1 className="similar-jobs-text">Similar Jobs </h1>
+        <ul className="similar-jobs-container">
           {similarJobsList.map(eachItem => (
             <SimilarJobItem eachSimilarJob={eachItem} key={eachItem.id} />
           ))}
@@ -198,9 +218,9 @@ class JobItemDetails extends Component {
 
   render() {
     return (
-      <div>
+      <div className="jobItem-page-container">
         <Header />
-        <div>{this.renderJobDetails()}</div>
+        {this.renderJobDetails()}
       </div>
     )
   }

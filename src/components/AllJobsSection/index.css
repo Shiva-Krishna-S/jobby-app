@@ -3,7 +3,6 @@
   flex-direction: column;
   width: 90%;
   margin: auto;
-  color: white;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -281,11 +280,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 130px;
-}
-
-@media screen and (min-width: 768px) {
-  .loader-container {
-    height: 180px;
-  }
+  height: 100%;
 }

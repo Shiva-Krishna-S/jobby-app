@@ -188,7 +188,7 @@ class AllJobsSection extends Component {
   )
 
   renderLoadingView = () => (
-    <div className="loader-container">
+    <div className="loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
@@ -318,6 +318,7 @@ class AllJobsSection extends Component {
               type="button"
               onClick={this.onClickSearch}
               className="job-search-icon-btn"
+              data-testid="searchButton"
             >
               <BsSearch className="search-icon" />
             </button>
@@ -345,6 +346,7 @@ class AllJobsSection extends Component {
               type="button"
               onClick={this.onClickSearch}
               className="job-search-icon-btn"
+              data-testid="searchButton"
             >
               <BsSearch className="search-icon" />
             </button>
