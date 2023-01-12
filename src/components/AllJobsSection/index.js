@@ -204,17 +204,21 @@ class AllJobsSection extends Component {
     const {profileDetails} = this.state
     const {name, profileImageUrl, shortBio} = profileDetails
     return (
-      <div>
-        <img src={profileImageUrl} alt="profile" />
-        <h1>{name}</h1>
-        <p>{shortBio}</p>
+      <div className="profile-container">
+        <img src={profileImageUrl} alt="profile" className="profile-image" />
+        <h1 className="person-name">{name}</h1>
+        <p className="person-role">{shortBio}</p>
       </div>
     )
   }
 
   renderProfileFailureView = () => (
-    <div>
-      <button type="button" onClick={this.onClickRetryProfile}>
+    <div className="profile-failure-conatiner">
+      <button
+        type="button"
+        onClick={this.onClickRetryProfile}
+        className="profile-retry-btn"
+      >
         Retry
       </button>
     </div>
@@ -291,9 +295,27 @@ class AllJobsSection extends Component {
   render() {
     const {searchInput} = this.state
     return (
-      <div className="jobs-page">
-        <div className="left-pane">
+      <div className="jobs-content-container">
+        <div className="jobs-profile-filters-section">
+          <div className="search-bar-container">
+            <input
+              type="search"
+              value={searchInput}
+              placeholder="Search"
+              onChange={this.onChangeSearchInput}
+              onKeyDown={this.onEnterSearchInput}
+              className="job-search-input-bar"
+            />
+            <button
+              type="button"
+              onClick={this.onClickSearch}
+              className="job-search-icon-btn"
+            >
+              <BsSearch className="search-icon" />
+            </button>
+          </div>
           {this.renderProfile()}
+          <hr className="separator" />
           <FiltersGroup
             employmentTypesList={employmentTypesList}
             salaryRangesList={salaryRangesList}
@@ -301,21 +323,7 @@ class AllJobsSection extends Component {
             changeSalaryRange={this.changeSalaryRange}
           />
         </div>
-        <div className="right-pane">
-          <div>
-            <input
-              type="search"
-              value={searchInput}
-              placeholder="Search"
-              onChange={this.onChangeSearchInput}
-              onKeyDown={this.onEnterSearchInput}
-            />
-            <button type="button" onClick={this.onClickSearch}>
-              <BsSearch />
-            </button>
-          </div>
-          {this.renderAllJobs()}
-        </div>
+        <div>{this.renderAllJobs()}</div>
       </div>
     )
   }
