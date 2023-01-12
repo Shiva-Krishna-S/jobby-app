@@ -146,34 +146,42 @@ class AllJobsSection extends Component {
     const shouldShowJobsList = jobsList.length > 0
 
     return shouldShowJobsList ? (
-      <div>
-        <ul>
-          {jobsList.map(job => (
-            <JobCard jobData={job} key={job.id} />
-          ))}
-        </ul>
-      </div>
+      <ul className="jobs-list-container">
+        {jobsList.map(job => (
+          <JobCard jobData={job} key={job.id} />
+        ))}
+      </ul>
     ) : (
-      <div>
+      <div className="no-jobs-list-container">
         <img
           src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
           alt="no jobs"
+          className="no-jobs-img"
         />
-        <h1>No Jobs Found</h1>
-        <p>We could not find any jobs. Try other filters.</p>
+        <h1 className="no-jobs-title">No Jobs Found</h1>
+        <p className="no-jobs-para">
+          We could not find any jobs. Try other filters.
+        </p>
       </div>
     )
   }
 
   renderFailureView = () => (
-    <div>
+    <div className="no-jobs-list-container">
       <img
         src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
         alt="failure view"
+        className="no-jobs-img"
       />
-      <h1>Oops! Something Went Wrong</h1>
-      <p>We cannot seem to find the page you are looking for.</p>
-      <button type="button" onClick={this.onClickRetryJobs}>
+      <h1 className="no-jobs-title">Oops! Something Went Wrong</h1>
+      <p className="no-jobs-para">
+        We cannot seem to find the page you are looking for.
+      </p>
+      <button
+        type="button"
+        onClick={this.onClickRetryJobs}
+        className="profile-retry-btn"
+      >
         Retry
       </button>
     </div>
@@ -322,8 +330,8 @@ class AllJobsSection extends Component {
             changeEmploymentType={this.changeEmploymentType}
             changeSalaryRange={this.changeSalaryRange}
           />
+          {this.renderAllJobs()}
         </div>
-        <div>{this.renderAllJobs()}</div>
       </div>
     )
   }

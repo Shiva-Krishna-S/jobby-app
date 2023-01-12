@@ -15,18 +15,26 @@ const FiltersGroup = props => {
             id={eachType.employmentTypeId}
             name={eachType.label}
             onChange={onChangeEmploymentType}
+            className="employment-checkbox"
           />
-          <label htmlFor={eachType.employmentTypeId}>{eachType.label}</label>
+          <label
+            htmlFor={eachType.employmentTypeId}
+            className="employment-type-item"
+          >
+            {eachType.label}
+          </label>
         </li>
       )
     })
   }
 
   const renderEmploymentTypes = () => (
-    <>
-      <h1>Type of Employment</h1>
-      <ul>{renderEmploymentTypesList()}</ul>
-    </>
+    <div className="employment-filter-container">
+      <h1 className="employment-type-text">Type of Employment</h1>
+      <ul className="employment-type-list-container">
+        {renderEmploymentTypesList()}
+      </ul>
+    </div>
   )
 
   const renderSalaryRangeList = () => {
@@ -42,24 +50,33 @@ const FiltersGroup = props => {
             id={eachType.salaryRangeId}
             name="salary"
             onChange={onChangeSalaryRange}
+            className="employment-checkbox"
           />
-          <label htmlFor={eachType.salaryRangeId}>{eachType.label}</label>
+          <label
+            htmlFor={eachType.salaryRangeId}
+            className="employment-type-item"
+          >
+            {eachType.label}
+          </label>
         </li>
       )
     })
   }
   const renderSalaryRange = () => (
-    <>
-      <h1>Salary Range</h1>
-      <ul>{renderSalaryRangeList()}</ul>
-    </>
+    <div className="employment-filter-container">
+      <h1 className="employment-type-text">Salary Range</h1>
+      <ul className="employment-type-list-container">
+        {renderSalaryRangeList()}
+      </ul>
+    </div>
   )
 
   return (
-    <div>
+    <>
       {renderEmploymentTypes()}
+      <hr className="separator" />
       {renderSalaryRange()}
-    </div>
+    </>
   )
 }
 

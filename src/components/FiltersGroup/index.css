@@ -1,0 +1,29 @@
+.employment-filter-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.employment-type-text {
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.employment-type-list-container {
+  padding-left: 0px;
+  list-style-type: none;
+  margin-top: 0px;
+}
+
+.employment-checkbox {
+  height: 12px;
+  width: 12px;
+  margin-right: 10px;
+}
+
+.employment-type-item {
+  font-family: 'Roboto';
+  font-size: 12px;
+  color: #ffffff;
+}

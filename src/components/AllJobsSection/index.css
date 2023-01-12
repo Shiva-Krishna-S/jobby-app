@@ -5,7 +5,8 @@
   margin: auto;
   max-width: 1110px;
   color: white;
-  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .jobs-profile-filters-section {
   width: 100%;
@@ -56,6 +57,7 @@
   border-radius: 15px;
   padding: 10px;
   height: 130px;
+  margin-bottom: 20px;
 }
 
 .profile-image {
@@ -90,11 +92,56 @@
   color: #ffffff;
   font-family: 'Roboto';
   font-size: 14px;
+  height: 25px;
+  width: 70px;
+  border-radius: 5px;
 }
 
 .separator {
   width: 100%;
   border: 1px solid #cbd5e1;
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 20px;
+}
+
+.jobs-list-container {
+  padding-left: 0px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.no-jobs-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 230px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.no-jobs-img {
+  height: 150px;
+  width: 200px;
+}
+
+.no-jobs-title {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.no-jobs-para {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 13px;
+  text-align: center;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
