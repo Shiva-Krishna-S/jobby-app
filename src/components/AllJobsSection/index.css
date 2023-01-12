@@ -1,0 +1,9 @@
+.jobs-page {
+  display: flex;
+}
+.left-pane {
+  width: 30%;
+}
+.right-pane {
+  width: 70%;
+}
