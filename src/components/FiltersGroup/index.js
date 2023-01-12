@@ -43,7 +43,7 @@ const FiltersGroup = props => {
       const {changeSalaryRange} = props
       const onChangeSalaryRange = event => changeSalaryRange(event.target.value)
       return (
-        <li key={eachType.salaryRangeId}>
+        <li key={eachType.salaryRangeId} className="employment-list-item">
           <input
             type="radio"
             value={eachType.salaryRangeId}
